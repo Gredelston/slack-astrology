@@ -13,8 +13,10 @@
   },
   "dependencies": {
     "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.2",
     "express": "^3.21.2",
-    "json-lint": "~0.1.0"
+    "json-lint": "~0.1.0",
+    "request": "^2.83.0"
   },
   "main": "index.js",
   "devDependencies": {},
