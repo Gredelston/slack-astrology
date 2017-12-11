@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.post('/', function (req, res) {
     // Parse the horoscope sign from the request,
     // and return early if an invalid sign was entered.
-    var sign = req.body.text;
+    var sign = req.body.text.toLowerCase();
     if (HOROSCOPE_SIGNS.indexOf(sign) == -1) {
         res.send('Invalid sign ' + sign + '! Did you misspell "Sagittarius"?');
     }
@@ -28,7 +28,15 @@ app.post('/', function (req, res) {
         var url = 'https://cafeastrology.com/' .concat(sign, 'dailyhoroscope.html')
         request(url, function(error, response, html) {
             if(!error) {
-                res.send('Successfully read from cafeastrology.com!');
+                var $ = cheerio.load(html);
+                console.log(html);
+                var horoscopeText = $('img').filter(function(i, el) {
+                    console.log('Hello!');
+                    return (el.attr('width') === 110);
+                }).parent().text();
+                if (horoscopeText) {
+                    res.send(horoscopeText);
+                } else { res.send("Failed to retrieve horoscope text."); }
             }
             else {
                 res.send('Failed to read from cafeastrology.com. Maybe their site is down?');
