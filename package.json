@@ -1,18 +1,33 @@
 {
-    "name": "slack-astrology",
-    "preferGlobal": true,
-    "version": "0.0.1",
-    "author": "Greg Edelston <gredelston@gmail.com>",
-    "description": "A web server that returns horoscopes from cafeastrology.com",
-    "license": "MIT",
-    "engines": {
-        "node": ">=0.10"
-    },
-    "scripts": {
-        "start": "node ./app.js"
-    },
-    "dependencies": {
-        "express": "~3.4.7",
-        "json-lint": "~0.1.0"
-    }
+  "name": "slack-astrology",
+  "preferGlobal": true,
+  "version": "0.0.1",
+  "author": "Greg Edelston <gredelston@gmail.com>",
+  "description": "A web server that returns horoscopes from cafeastrology.com",
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.10"
+  },
+  "scripts": {
+    "start": "node ./app.js"
+  },
+  "dependencies": {
+    "express": "^3.4.8",
+    "json-lint": "~0.1.0"
+  },
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gredelston/slack-astrology.git"
+  },
+  "keywords": [
+    "slack",
+    "astrology",
+    "horoscope"
+  ],
+  "bugs": {
+    "url": "https://github.com/Gredelston/slack-astrology/issues"
+  },
+  "homepage": "https://github.com/Gredelston/slack-astrology#readme"
 }
