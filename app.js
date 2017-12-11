@@ -10,8 +10,8 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function (req, res) {
-    console.log(req.body);
-    res.send(req.body.text);
+    console.log(req);
+    res.send('Hello, POST');
 });
 
 app.listen(PORT, () => console.log('Example app listening on port ' + PORT + '!'));
